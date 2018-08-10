@@ -55,7 +55,7 @@ class_names = ['BG', 'person', 'bicycle', 'car', 'motorcycle', 'airplane',
                'teddy bear', 'hair drier', 'toothbrush']
 
 # Load the image we want to run detection on
-image_path = str(ROOT_DIR / "sample_images" / "frame-1.png")
+image_path = str(ROOT_DIR / "sample_images" / "line_example.png")
 image = cv2.imread(image_path)
 
 # Convert the image from BGR color (which OpenCV uses) to RGB color
