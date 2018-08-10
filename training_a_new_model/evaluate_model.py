@@ -25,7 +25,7 @@ TRAINED_MODEL_PATH = MODEL_DIR / "custom_object20180810T1614" / "mask_rcnn_custo
 model = MaskRCNN(mode="inference", model_dir=MODEL_DIR, config=ObjectDetectorConfig())
 
 # Load pre-trained model
-model.load_weights(TRAINED_MODEL_PATH, by_name=True)
+model.load_weights(str(TRAINED_MODEL_PATH), by_name=True)
 
 # COCO Class names
 class_names = ['BG', 'custom_object']
