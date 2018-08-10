@@ -116,7 +116,7 @@ def train(model):
 
     # Load the validation data set
     dataset_val = RectLabelDataset()
-    dataset_val.load_training_images(DATASET_PATH, "validation_seet")
+    dataset_val.load_training_images(DATASET_PATH, "validation_set")
     dataset_val.prepare()
 
     # Re-train the model on a small data set. If you are training from scratch with a huge data set,
