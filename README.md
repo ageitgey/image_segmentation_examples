@@ -12,7 +12,7 @@ These examples are roughly inspired by the examples included with that project, 
 ### Recommended Hardware
 
 - A computer with an nvidia GT 980 Ti+ or GT 1080 Ti GPU. 
-  - You need a a GPU with least 6GB RAM to run the training script.
+  - You need a a GPU with least 6GB RAM to run the training script. It will fail with less RAM.
 
 If you don't have a GPU, the scripts will still run - just very slowly.
 
@@ -116,6 +116,20 @@ Counts the number of people waiting in line by seeing which detected people are 
 
 This example shows how to re-train the COCO model against a new dataset using transfer learning.
 
-To do this, you'll need to gather training images, put them in the "training_images" subfolders and annoation
-those images with [RectLabel](https://rectlabel.com/). The training images I showed in the talk aren't included.
+To do this, you'll need to gather training images, put them in the "training_images" subfolders and annotation
+those images with [RectLabel](https://rectlabel.com/). The training images I showed in the talk aren't included,
+but I did include one annotated training image and one annotated validation image of a cup just to show you 
+the idea and the file formats.
 
+#### train.py
+
+Uses transfer learning to re-train the COCO model to detect a custom object. Uses the training data in the
+./training_images folder. 
+
+If you want to build a real model, tou need to supply your own training images and annotate those images with 
+RectLabel. Make sure you include and annotate training images and validation images.
+
+#### evaluate_model.py
+
+Runs your new model on a test image and displays the detections on the screen. You'll want to update
+the file path to your trained model and update the path to the image you want to test.
