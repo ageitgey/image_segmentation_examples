@@ -106,5 +106,5 @@ venv.bak/
 .mypy_cache/
 
 .idea
-
+.DS_Store
 mask_rcnn_coco.h5

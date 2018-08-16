@@ -126,7 +126,7 @@ the idea and the file formats.
 Uses transfer learning to re-train the COCO model to detect a custom object. Uses the training data in the
 ./training_images folder. 
 
-If you want to build a real model, tou need to supply your own training images and annotate those images with 
+If you want to build a your own custom model, you can supply your own training images and annotate those images with 
 RectLabel. Make sure you include and annotate training images and validation images.
 
 #### evaluate_model.py
