@@ -19,7 +19,7 @@ ROOT_DIR = Path(".")
 MODEL_DIR = ROOT_DIR / "training_logs"
 
 # Local path to trained weights file (make sure you update this)
-TRAINED_MODEL_PATH = MODEL_DIR / "custom_object20180810T1614" / "mask_rcnn_custom_object_0030.h5"
+TRAINED_MODEL_PATH = MODEL_DIR / "custom_object20180817T1201" / "mask_rcnn_custom_object_0030.h5"
 
 # Create a Mask-RCNN model in inference mode
 model = MaskRCNN(mode="inference", model_dir=MODEL_DIR, config=ObjectDetectorConfig())
@@ -31,7 +31,7 @@ model.load_weights(str(TRAINED_MODEL_PATH), by_name=True)
 class_names = ['BG', 'custom_object']
 
 # Load the image we want to run detection on
-image_path = "./training_images/validation_set/object_0002.jpg"
+image_path = "./training_images/validation_set/20180816_133618.jpg"
 image = cv2.imread(image_path)
 
 # Convert the image from BGR color (which OpenCV uses) to RGB color

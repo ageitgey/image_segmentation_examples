@@ -2,6 +2,7 @@
 # is licensed under the MIT License (see LICENSE for details).
 # This is based on code originally written by Waleed Abdulla but re-written to support data annotated by RectLabel.
 
+import warnings
 from pathlib import Path
 import xmltodict
 import numpy as np
@@ -119,15 +120,20 @@ def train(model):
     dataset_val.load_training_images(DATASET_PATH, "validation_set")
     dataset_val.prepare()
 
-    # Re-train the model on a small data set. If you are training from scratch with a huge data set,
-    # you'd want to train longer and customize these settings.
-    model.train(
-        dataset_train,
-        dataset_val,
-        learning_rate=config.LEARNING_RATE,
-        epochs=30,
-        layers='heads'
-    )
+    with warnings.catch_warnings():
+        # Suppress annoying skimage warning due to code inside Mask R-CNN.
+        # Not needed, but makes the output easier to read until Mask R-CNN is updated.
+        warnings.simplefilter("ignore")
+
+        # Re-train the model on a small data set. If you are training from scratch with a huge data set,
+        # you'd want to train longer and customize these settings.
+        model.train(
+            dataset_train,
+            dataset_val,
+            learning_rate=config.LEARNING_RATE,
+            epochs=30,
+            layers='heads'
+        )
 
 
 # Load config
