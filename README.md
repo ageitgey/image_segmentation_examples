@@ -133,3 +133,9 @@ RectLabel. Make sure you include and annotate training images and validation ima
 
 Runs your new model on a test image and displays the detections on the screen. You'll want to update
 the file path to your trained model and update the path to the image you want to test.
+
+#### evaluate_video_with_model.py
+
+Runs your new model on a video file and displays the detections on the screen and writes out a new
+video with the detections. You'll want to update the file path to your trained model and update the 
+path to the video file that you want to process.
